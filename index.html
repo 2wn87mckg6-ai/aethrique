@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AÉTHRIQUE — Shop</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#f5f5f3;color:#111;font-family:Inter,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}
+header{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;background:#f5f5f3;position:sticky;top:0;z-index:10}.logo{text-align:center;font:600 25px "Cormorant Garamond",serif;letter-spacing:5px}.logo small{display:block;font:8px Inter;letter-spacing:6px;margin-top:5px}nav{display:flex;gap:28px;font-size:10px;letter-spacing:2px}nav a{text-decoration:none;color:#111}.bag{border:1px solid #111;background:#111;color:#fff;padding:10px 14px;font-size:10px}
+.hero{background:#111;color:#fff;padding:65px 7%;text-align:center}.hero h1{font:600 65px "Cormorant Garamond",serif;margin:0}.hero p{font-size:9px;letter-spacing:5px;color:#aaa}
+.products{max-width:1100px;margin:auto;padding:55px 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;text-align:center;padding-bottom:20px}.pic{height:330px;background:#ededeb;display:flex;align-items:center;justify-content:center}.hoodie{width:170px;height:220px;border-radius:25px 25px 10px 10px;position:relative;box-shadow:0 18px 28px #0002}.hoodie:before,.hoodie:after{content:"";position:absolute;top:20px;width:73px;height:150px;border-radius:22px}.hoodie:before{right:97%;transform:rotate(17deg)}.hoodie:after{left:97%;transform:rotate(-17deg)}.white{background:#fafaf8}.white:before,.white:after{background:#fafaf8}.black{background:#111}.black:before,.black:after{background:#111}.gray{background:#999}.gray:before,.gray:after{background:#999}.print{position:absolute;top:95px;width:100%;font:600 10px "Cormorant Garamond",serif;letter-spacing:3px}.black .print{color:#eee}.card h2{font-size:13px;margin:12px 0 4px}.card p{font-size:10px;color:#777}.price{font-weight:600;font-size:12px;margin:12px}.sizes{display:flex;justify-content:center;gap:6px;margin:10px}.sizes button{background:#fff;border:1px solid #ccc;padding:7px 10px;font-size:9px}.sizes button.active{background:#111;color:#fff;border-color:#111}.add{width:84%;padding:13px;background:#111;color:#fff;border:0;font-size:9px;letter-spacing:2px}
+.drawer{position:fixed;inset:0;background:#0007;z-index:20;display:none}.drawer.open{display:block}.cartPanel{position:absolute;right:0;top:0;height:100%;width:min(430px,94vw);background:#fff;padding:28px;overflow:auto}.cartHead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:18px}.cartHead h2{font:600 32px "Cormorant Garamond",serif;margin:0}.close{background:none;border:0;font-size:24px}.cartItem{display:grid;grid-template-columns:75px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid #ddd;align-items:center}.mini{height:85px;background:#eee;display:flex;align-items:center;justify-content:center}.mini .hoodie{width:48px;height:63px;border-radius:9px}.mini .hoodie:before,.mini .hoodie:after{width:21px;height:43px;top:7px}.mini .print{display:none}.itemName{font-size:11px;font-weight:600}.itemMeta{font-size:9px;color:#777;margin-top:5px}.qty{display:flex;align-items:center;border:1px solid #ccc;width:max-content;margin-top:10px}.qty button{border:0;background:#fff;width:27px;height:27px}.qty span{font-size:10px;width:25px;text-align:center}.remove{border:0;background:none;font-size:9px;text-decoration:underline;margin-top:7px;color:#666}.itemPrice{font-size:11px;font-weight:600;white-space:nowrap}.empty{text-align:center;color:#777;font-size:11px;padding:50px 0}.summary{border-top:1px solid #111;margin-top:15px;padding-top:18px}.line{display:flex;justify-content:space-between;padding:8px 0;font-size:11px}.total{font-size:15px;font-weight:600;padding-top:14px}.checkout{width:100%;background:#111;color:#fff;border:0;padding:16px;margin-top:15px;font-size:10px;letter-spacing:2px}
+footer{background:#111;color:#fff;padding:35px 7%;text-align:center;font-size:8px;letter-spacing:3px}
+#toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#111;color:#fff;padding:13px 18px;font-size:10px;opacity:0;transition:.2s;z-index:40}#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:750px){nav{display:none}.products{grid-template-columns:1fr}.hero h1{font-size:50px}}
+</style>
+</head>
+<body>
+<header><div></div><div class="logo">AÉTHRIQUE<small>PARIS</small></div><nav><a href="#shop">SHOP</a><a href="#contact">CONTACT</a></nav><button class="bag" onclick="openCart()">BAG <span id="count">0</span></button></header>
+<main id="shop"><section class="hero"><h1>Our First Drop</h1><p>MORE THAN CLOTHING · A MINDSET</p></section>
+<section class="products">
+<div class="card" data-color="Cloud White" data-class="white"><div class="pic"><div class="hoodie white"><div class="print">AÉTHRIQUE<br>PARIS</div></div></div><h2>Signature Hoodie</h2><p>Cloud White</p><div class="price">€59,00</div><div class="sizes"><button>XS</button><button>S</button><button class="active">M</button><button>L</button><button>XL</button></div><button class="add">ADD TO CART</button></div>
+<div class="card" data-color="Midnight Black" data-class="black"><div class="pic"><div class="hoodie black"><div class="print">AÉTHRIQUE<br>PARIS</div></div></div><h2>Signature Hoodie</h2><p>Midnight Black</p><div class="price">€59,00</div><div class="sizes"><button>XS</button><button>S</button><button class="active">M</button><button>L</button><button>XL</button></div><button class="add">ADD TO CART</button></div>
+<div class="card" data-color="Stone Grey" data-class="gray"><div class="pic"><div class="hoodie gray"><div class="print">AÉTHRIQUE<br>PARIS</div></div></div><h2>Signature Hoodie</h2><p>Stone Grey</p><div class="price">€59,00</div><div class="sizes"><button>XS</button><button>S</button><button class="active">M</button><button>L</button><button>XL</button></div><button class="add">ADD TO CART</button></div>
+</section></main>
+<footer id="contact">AÉTHRIQUE PARIS · MORE THAN CLOTHING · EST. 2024</footer>
+
+<div class="drawer" id="drawer" onclick="outside(event)"><aside class="cartPanel">
+<div class="cartHead"><h2>Your Bag</h2><button class="close" onclick="closeCart()">×</button></div>
+<div id="items"></div><div class="summary"><div class="line"><span>Zwischensumme</span><span id="subtotal">€0,00</span></div><div class="line"><span>Versand</span><span id="shipping">€0,00</span></div><div class="line total"><span>Gesamt</span><span id="total">€0,00</span></div><button class="checkout" onclick="checkout()">CHECKOUT</button></div>
+</aside></div>
+<div id="toast"></div>
+<script>
+let cart=[];
+document.querySelectorAll('.card').forEach(card=>{
+ const sizes=card.querySelectorAll('.sizes button');
+ sizes.forEach(b=>b.addEventListener('click',()=>{sizes.forEach(x=>x.classList.remove('active'));b.classList.add('active')}));
+ card.querySelector('.add').addEventListener('click',()=>{
+   const size=card.querySelector('.sizes .active').textContent;
+   const color=card.dataset.color;
+   const existing=cart.find(x=>x.color===color&&x.size===size);
+   if(existing)existing.qty++;else cart.push({color,size,cls:card.dataset.class,qty:1});
+   save();render();showToast('Zur Bag hinzugefügt ✓');
+ });
+});
+function save(){localStorage.setItem('aethriqueCart',JSON.stringify(cart))}
+function load(){try{cart=JSON.parse(localStorage.getItem('aethriqueCart'))||[]}catch(e){cart=[]}render()}
+function render(){
+ document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.qty,0);
+ const box=document.getElementById('items');
+ if(!cart.length){box.innerHTML='<div class="empty">Deine Bag ist leer.</div>'}
+ else box.innerHTML=cart.map((x,i)=>`<div class="cartItem"><div class="mini"><div class="hoodie ${x.cls}"><div class="print">AÉTHRIQUE</div></div></div><div><div class="itemName">Signature Hoodie</div><div class="itemMeta">${x.color} · Größe ${x.size}</div><div class="qty"><button onclick="change(${i},-1)">−</button><span>${x.qty}</span><button onclick="change(${i},1)">+</button></div><button class="remove" onclick="removeItem(${i})">Entfernen</button></div><div class="itemPrice">€${(59*x.qty).toFixed(2).replace('.',',')}</div></div>`).join('');
+ const sub=cart.reduce((s,x)=>s+59*x.qty,0),ship=sub?4.9:0,total=sub+ship;
+ document.getElementById('subtotal').textContent='€'+sub.toFixed(2).replace('.',',');
+ document.getElementById('shipping').textContent='€'+ship.toFixed(2).replace('.',',');
+ document.getElementById('total').textContent='€'+total.toFixed(2).replace('.',',');
+}
+function change(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);save();render()}
+function removeItem(i){cart.splice(i,1);save();render();showToast('Artikel entfernt')}
+function openCart(){document.getElementById('drawer').classList.add('open');render()}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+function outside(e){if(e.target.id==='drawer')closeCart()}
+function checkout(){if(!cart.length)return;alert('Checkout ist als Nächstes bereit. Echte Zahlungen können wir danach sicher anbinden.')}
+function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1600)}
+load();
+</script>
+</body>
+</html>
