@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AÉTHRIQUE — More Than Clothing</title>
+  <meta name="description" content="AÉTHRIQUE — Paris-inspired contemporary streetwear.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f3f1ed;--ink:#151515;--muted:#77736d;--line:#d6d1c9;--card:#e9e5de}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(243,241,237,.92);backdrop-filter:blur(12px);z-index:5}
+    .brand{font-family:"Playfair Display",serif;letter-spacing:.16em;font-size:20px}
+    nav a{color:inherit;text-decoration:none;margin-left:28px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;width:55vw;height:55vw;max-width:700px;max-height:700px;border:1px solid #c8c2ba;border-radius:50%;opacity:.55}
+    .hero-content{position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.42em;font-size:11px;color:var(--muted)}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(58px,12vw,150px);font-weight:500;letter-spacing:.12em;margin:20px 0 12px}
+    .hero p{max-width:480px;margin:0 auto 30px;color:#5e5a55;line-height:1.7}
+    .btn{display:inline-block;padding:14px 26px;background:var(--ink);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:11px}
+    section{padding:100px 5vw}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
+    .section-head h2{font-family:"Playfair Display",serif;font-size:42px;font-weight:500;margin:0}.section-head span{font-size:11px;letter-spacing:.16em;color:var(--muted)}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:var(--card);min-height:520px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}
+    .hoodie{height:390px;display:grid;place-items:center;position:relative}.hoodie-body{width:220px;height:250px;background:#fff;border-radius:22px 22px 14px 14px;box-shadow:0 18px 35px #00000015;position:relative}
+    .hoodie-body:before{content:"";position:absolute;left:72px;top:-42px;width:76px;height:65px;background:#fff;border-radius:45% 45% 15px 15px}
+    .hoodie-body:after{content:"AÉTHRIQUE";position:absolute;top:95px;left:0;right:0;text-align:center;font-family:"Playfair Display",serif;font-size:14px;letter-spacing:.18em}
+    .pname{font-family:"Playfair Display",serif;font-size:22px}.price{font-size:12px;color:var(--muted);margin-top:6px}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.story h2{font-family:"Playfair Display",serif;font-size:58px;font-weight:500;margin:0 0 20px}.story p{line-height:1.9;color:#5e5a55}
+    .orb{height:420px;background:#181818;position:relative;overflow:hidden}.orb:before{content:"";position:absolute;width:280px;height:280px;border:1px solid #aaa;border-radius:50%;top:70px;left:50%;transform:translateX(-50%) rotate(25deg)}.orb:after{content:"A";position:absolute;color:#eee;font-family:"Playfair Display",serif;font-size:190px;left:50%;top:95px;transform:translateX(-50%);opacity:.9}
+    .newsletter{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.newsletter h2{font-family:"Playfair Display",serif;font-size:48px;font-weight:500}
+    form{display:flex;max-width:500px;margin:30px auto 0}input{flex:1;border:1px solid var(--line);background:transparent;padding:15px}button{border:0;background:var(--ink);color:white;padding:0 22px;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+    footer{padding:35px 5vw;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+    @media(max-width:800px){.products,.story{grid-template-columns:1fr}.products .product{min-height:430px}.hoodie{height:300px}.story{gap:35px}.story h2{font-size:44px}nav a{margin-left:12px}}
+  </style>
+</head>
+<body>
+<nav><div class="brand">AÉTHRIQUE</div><div><a href="#collection">Collection</a><a href="#story">Story</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Paris · Contemporary Streetwear</div>
+    <h1>AÉTHRIQUE</h1>
+    <p>More than clothing. A clean, modern expression of movement, discipline and individuality.</p>
+    <a class="btn" href="#collection">Explore the collection</a>
+  </div>
+</header>
+
+<section id="collection">
+  <div class="section-head"><h2>First Drop</h2><span>01 / 03 — AÉTHRIQUE ESSENTIALS</span></div>
+  <div class="products">
+    <article class="product"><div class="hoodie"><div class="hoodie-body"></div></div><div><div class="pname">Signature Hoodie</div><div class="price">€79.00 · Ivory</div></div></article>
+    <article class="product"><div class="hoodie"><div class="hoodie-body"></div></div><div><div class="pname">Atelier Hoodie</div><div class="price">€89.00 · Cloud White</div></div></article>
+    <article class="product"><div class="hoodie"><div class="hoodie-body"></div></div><div><div class="pname">Essential Hoodie</div><div class="price">€69.00 · Off White</div></div></article>
+  </div>
+</section>
+
+<section id="story">
+  <div class="story">
+    <div><div class="eyebrow">The AÉTHRIQUE idea</div><h2>Made to move differently.</h2><p>Minimal silhouettes. Quiet details. A stronger point of view. AÉTHRIQUE is built around the idea that what you wear can reflect where you're going.</p><a class="btn" href="#contact">Join the list</a></div>
+    <div class="orb" aria-label="AÉTHRIQUE abstract brand graphic"></div>
+  </div>
+</section>
+
+<section id="contact" class="newsletter">
+  <div class="eyebrow">Private access</div><h2>Be first for the drop.</h2>
+  <p>Sign up for launch news and early access.</p>
+  <form onsubmit="event.preventDefault(); alert('Thanks — you are on the list.');"><input type="email" placeholder="Your email" required><button type="submit">Join</button></form>
+</section>
+
+<footer><span>AÉTHRIQUE — MORE THAN CLOTHING</span><span>© 2026 AÉTHRIQUE</span></footer>
+</body>
+</html>
